@@ -38,7 +38,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="80%"
 }
 
 // You can configure outputs by their name, which you can find
@@ -47,11 +47,16 @@ input {
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-/-output "eDP-1" {
-    mode "1920x1080@120.030"
+output "eDP-1" {
+    mode "2880x1800@120.000"
     scale 2
-    transform "normal"
-    position x=1280 y=0
+    // transform "normal"
+    // position x=1280 y=0
+    // variable-refresh-rate
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080@144.000"
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -67,7 +72,7 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "never"
+    center-focused-column "always"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
