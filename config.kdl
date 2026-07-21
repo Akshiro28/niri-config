@@ -127,7 +127,7 @@ layout {
         //
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#505050"
+        inactive-color "#ff4e66"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -323,6 +323,16 @@ layer-rule {
 
 spawn-sh-at-startup "awww-daemon --namespace backdrop"
 spawn-sh-at-startup "sleep 0.5 && awww img -n backdrop ~/Pictures/Wallpapers/pixel-galaxy-blur.png"
+
+// (Overview) workspace shadow
+/-overview {
+    workspace-shadow {
+        softness 64
+        spread 8
+        offset x=0 y=0
+        color "#00000080"
+    }
+}
 
 binds {
     Mod+N { spawn "dms" "ipc" "call" "bar" "toggle"; }
